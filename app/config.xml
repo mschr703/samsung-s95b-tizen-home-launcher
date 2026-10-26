@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://local.luma.tv/launcher" version="1.2.0" viewmodes="fullscreen">
+  <tizen:application id="LumaTV2026.LumaHome" package="LumaTV2026" required_version="2.3"/>
+  <name>Luma Home</name>
+  <content src="index.html"/>
+  <icon src="icon.png"/>
+  <tizen:profile name="tv-samsung"/>
+  <tizen:setting screen-orientation="landscape" pointing-device-support="disable" context-menu="disable" background-support="disable"/>
+</widget>

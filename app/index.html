@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="screen" class="screen">
+    <header class="welcome">
+      <p id="today" class="welcome-date"></p>
+      <div id="top-time" class="welcome-time"></div>
+      <h1 id="greeting" class="welcome-greeting">Hallo Alex</h1>
+    </header>
+
+    <section class="apps-section" aria-labelledby="apps-heading">
+      <div class="section-heading"><h2 id="apps-heading">Deine Apps</h2><span id="app-count"></span><button id="edit-apps" class="edit-button focusable" type="button">Apps ändern</button></div>
+      <div id="app-grid" class="app-grid"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-left"><span class="key-pill">◀ ▶</span> Navigieren <span class="key-pill">OK</span> Öffnen</div>
+      <button id="samsung-home" class="system-button focusable" type="button">Samsung Home öffnen</button>
+    </footer>
+  </main>
+
+  <div id="modal" class="picker-screen" hidden>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div><p class="eyebrow">PERSONALISIEREN</p><h2 id="modal-title">Apps auswählen</h2></div>
+        <button id="close-modal" class="close-button focusable" type="button" aria-label="Schließen">×</button>
+      </div>
+      <p id="modal-intro" class="modal-intro">Wähle Apps für deine Startseite. Die Auswahl wird auf diesem Fernseher gespeichert.</p>
+      <div class="search-row"><span>App suchen</span><button id="catalog-search-button" class="search-input search-trigger focusable" type="button">Name eingeben</button><input id="catalog-search" class="search-input search-editor" type="text" aria-label="App suchen" placeholder="Name eingeben" autocomplete="off" hidden></div>
+      <div id="catalog" class="catalog"></div>
+      <div class="catalog-pager"><button id="catalog-prev" class="pager-button focusable" type="button">‹ Zurück</button><span id="catalog-page"></span><button id="catalog-next" class="pager-button focusable" type="button">Weiter ›</button></div>
+      <p class="modal-hint">Aktive Apps stehen zuerst. Pfeil hoch markiert die Suche, OK öffnet die Tastatur. Zurück führt zu Luma.</p>
+    </div>
+  </div>
+
+  <div id="confirm" class="modal" hidden>
+    <div class="confirm-panel">
+      <h2>Startseite verlassen?</h2>
+      <p>Samsung Home kannst du über den Knopf unten rechts öffnen.</p>
+      <div class="confirm-actions"><button id="stay-button" class="action-button focusable" type="button">Hier bleiben</button><button id="exit-button" class="action-button focusable" type="button">Verlassen</button></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="main.js"></script>
+</body>
+</html>

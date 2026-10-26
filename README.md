@@ -22,7 +22,7 @@ Power-on startup has **not** been verified. The native Home mapping was tested o
 
 ## Get started
 
-1. Install [Tizen Studio with the TV tools](https://developer.samsung.com/smarttv/develop/getting-started/setting-up-sdk/installing-tv-sdk.html), enable Developer Mode on the TV, and create a Samsung TV signing certificate for your device.
+1. Follow the [setup guide](docs/INSTALL.md): install Tizen Studio and its TV extensions, open Samsung **Apps → App Settings**, enter **12345** to enable Developer Mode, and create a Samsung TV signing certificate. The TV asks for your **computer's IP**; SDB later connects to the **TV's IP**.
 2. Clone this repo and package the six files in `app/` with your own certificate profile:
 
    ```powershell
@@ -31,7 +31,7 @@ Power-on startup has **not** been verified. The native Home mapping was tested o
    tizen package -t wgt -s YOUR_PROFILE -- app
    ```
 
-3. Follow [`docs/INSTALL.md`](docs/INSTALL.md) to connect with SDB, install the generated `.wgt`, and launch Luma. It works as a regular pinned TV app without changing the Home button.
+3. Continue with [`docs/INSTALL.md`](docs/INSTALL.md) to connect with SDB, install the generated `.wgt`, and launch Luma. It works as a regular pinned TV app without changing the Home button.
 4. If you want the physical **Home** button to open Luma, read [`docs/HOME-BUTTON.md`](docs/HOME-BUTTON.md) and save the TV's original values before any change. The original Samsung interface remains accessible from Luma.
 
 ## Use and customize

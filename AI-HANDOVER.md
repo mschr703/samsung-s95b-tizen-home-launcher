@@ -22,6 +22,18 @@ The TV's serial, DUID, local IP, signing certificate, and saved native baseline 
 
 The owner tested the 1.2 app logic on the TV with personal greetings and favorites. The public source changes only those example strings and the browser preview's sample apps; it built as a signed `.wgt` but was not installed over the owner's personalized setup. Power-on startup, native recovery after a changed state, and operation on another model or firmware are **not verified**.
 
+## First-time setup facts for an assistant
+
+Use [`docs/INSTALL.md`](docs/INSTALL.md) for the full walk-through. When guiding a new owner, check these distinct stages in order:
+
+1. Install Tizen Studio, **TV Extensions**, and **Samsung Certificate Extension 2.0.73 or later**. Check that `tizen` and `sdb` resolve in a new terminal, or use their full paths.
+2. On the original Samsung Smart Hub, open **Apps → App Settings** and enter **12345** with the remote or its on-screen number keypad. Set **Developer mode** to **On**, enter the **computer's local IP**, reboot, and verify that **Develop Mode** appears in Apps.
+3. Create a **Samsung → TV** certificate profile with an author certificate and a distributor certificate containing the **TV's DUID**. Keep the author certificate and password private. Use the original author certificate for later updates.
+4. Run `sdb connect <TV-IP>:26101`, then `sdb devices`. Continue only when the TV has status `device`. The **TV IP** belongs in this command; it is different from the **computer IP** entered on the TV.
+5. Package and install the ordinary web app first, then test a tile and **Samsung Home öffnen**. Only consider the separate native Home mapping after these paths work.
+
+Samsung's [TV device](https://developer.samsung.com/smarttv/develop/getting-started/using-sdk/tv-device.html), [SDK installation](https://developer.samsung.com/smarttv/develop/getting-started/setting-up-sdk/installing-tv-sdk.html) and [certificate](https://developer.samsung.com/smarttv/develop/getting-started/setting-up-sdk/creating-certificates.html) guides are the primary references. TV menus can differ by region and firmware; use the on-screen labels when they differ from this case.
+
 ## Find the right file
 
 | Goal | File / action |

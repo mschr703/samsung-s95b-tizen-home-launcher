@@ -38,6 +38,13 @@ Power-on startup has **not** been verified. The native Home mapping was tested o
 
 - In Luma, choose **Apps auswählen** or **Apps ändern** to edit favorites. The selected apps are at the top. Move **Up** from the first app to the search button; press **OK** to type; choose **Done** or **Back** on the TV keyboard to return to the results.
 - Edit `GREETINGS` and `DEFAULT_NAMES` in [`app/main.js`](app/main.js) to change the example greetings and initial favorites. Only installed apps matching those names are shown.
+
+  ```js
+  var GREETINGS = ["Hallo Alex", "Hallo Sam", "Willkommen zu Hause"];
+  var DEFAULT_NAMES = ["youtube", "netflix", "spotify"];
+  ```
+
+  Existing favorites are saved on the TV. Changing `DEFAULT_NAMES` only takes effect when no favorites have been saved; use the app picker to edit an already configured TV.
 - Edit [`app/style.css`](app/style.css) for layout and animation, or replace [`app/rainforest-bg.png`](app/rainforest-bg.png) with another local image.
 - Keep the application ID consistent between [`app/config.xml`](app/config.xml) and the native helpers if you change it. See [`AI-HANDOVER.md`](AI-HANDOVER.md).
 
